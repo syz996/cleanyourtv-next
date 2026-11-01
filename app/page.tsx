@@ -6,6 +6,7 @@ import Steps from '@/components/steps';
 import Safety from '@/components/safety';
 import SiteFooter from '@/components/site-footer';
 import { SITE_URL, REPO_URL } from '@/lib/site'
+import type { Metadata } from 'next'
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -20,6 +21,10 @@ const jsonLd = {
   disambiguatingDescription:
     'Independent third-party guide. Not affiliated with or endorsed by the Clean Your TV project.',
   author: { '@type': 'Organization', name: 'CleanYourTV Tool', url: SITE_URL },
+}
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
 }
 
 export default function Home() {
