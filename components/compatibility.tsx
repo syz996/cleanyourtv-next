@@ -22,7 +22,7 @@ const alternatives = [
   },
   {
     platform: 'LG webOS',
-    setting: 'Additional Settings › General',
+    setting: 'Settings › General › Additional Settings',
     fallbackNote: 'On webOS 6 and newer the path sits under Settings › General › Additional Settings.',
     points: [
       'Disable Live Plus to stop automatic content recognition. This is the closest equivalent to the Android TV privacy work.',
