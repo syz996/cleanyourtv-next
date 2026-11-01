@@ -1,9 +1,28 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { SITE_URL, SITE_NAME } from '@/lib/site'
+
+const TITLE = 'Clean Your TV GitHub: Prompt Generator for Claude Code' // 54 字符
+const DESC =
+  'Paste one prompt into Claude Code, Codex or Gemini Antigravity to strip ads from Android TV / Google TV. No root, fully reversible.'
+
 export const metadata: Metadata = {
-  title: 'Clean Your TV GitHub — Prompt Generator for Claude Code & Codex',
-  description: 'Build a careful, model-aware prompt for the Clean Your TV project. Check compatibility and review every change before you apply it.',
-};
+  metadataBase: new URL(SITE_URL),
+  title: { default: TITLE, template: `%s | ${SITE_NAME}` },
+  description: DESC,
+  alternates: { canonical: '/' },
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: 'website',
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: TITLE,
+    description: DESC,
+    images: [{ url: '/og/home.png', width: 1200, height: 630, alt: 'Clean Your TV prompt generator' }],
+  },
+  twitter: { card: 'summary_large_image', title: TITLE, description: DESC, images: ['/og/home.png'] },
+  icons: { icon: '/favicon.ico', apple: '/apple-touch-icon.png' },
+}
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="en"><body>{children}</body></html>;
 }
