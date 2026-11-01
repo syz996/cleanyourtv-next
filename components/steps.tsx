@@ -17,12 +17,9 @@ const cmd = {
 };
 
 const adbSteps = [
-  {
-    n: '1',
-    title: 'Connect and confirm',
-    code: [cmd.connect, cmd.devices],
-    desc: 'Use the IP shown under Network & Internet on the TV. The device list must show an entry ending in "device" before you continue. "offline" or "unauthorized" means stop here.',
-  },
+ { n: '1', title: 'Pair, connect and confirm',
+  code: [cmd.pair, cmd.connect, cmd.devices],
+  desc: 'Android 11 and newer pair with the 6-digit code shown on the TV; on older sets skip the pair line and connect directly. Use the port on the debugging screen — it is usually not 5555. The list must show an entry ending in "device"; "offline" or "unauthorized" means stop here.' },
   {
     n: '2',
     title: 'Record the original state',
