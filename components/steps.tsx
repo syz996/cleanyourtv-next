@@ -88,7 +88,7 @@ export default function Steps() {
             <div>
               <div className="font-semibold">Connecting to the TV over ADB</div>
               <div className="mono mt-1 text-[10px] uppercase tracking-[.16em] text-slate-500">
-                Three commands cover most of it
+                Five commands cover most of it
               </div>
             </div>
           </div>
