@@ -5,7 +5,7 @@ const items = [
   { name: 'Amazon Fire TV', desc: 'Cleanup guidance only · no launcher swap', status: 'Limited', tone: 'warn', icon: CircleHelp },
   { name: 'Samsung Tizen', desc: 'Not covered by the Android TV workflow', status: 'Unsupported', tone: 'bad', icon: ShieldAlert },
   { name: 'LG webOS', desc: 'Not covered by the Android TV workflow', status: 'Unsupported', tone: 'bad', icon: ShieldAlert },
-  { name: 'Roku OS', desc: 'Notcovered by the Android TV workflow', status: 'Unsupported', tone: 'bad', icon: ShieldAlert },
+  { name: 'Roku OS', desc: 'Not covered by the Android TV workflow', status: 'Unsupported', tone: 'bad', icon: ShieldAlert },
 ];
 
 // 三档不支持平台的替代做法，纯静态文本，无交互
@@ -17,7 +17,7 @@ const alternatives = [
     points: [
       'Turn off Interest-Based Advertising in Settings › Privacy Choices. It does not remove ACR tracking, which has no user-facing opt-out on Tizen.',
       'Reset the advertising ID rather than hunting for a tracking toggle.',
-      'Replace the default launcher is not possible; removing preinstalled apps requires a signed sideload, which breaks warranty terms.',
+      'Replacing the default launcher is not possible; removing preinstalled apps requires a signed sideload, which breaks warranty terms.',
     ],
   },
   {
