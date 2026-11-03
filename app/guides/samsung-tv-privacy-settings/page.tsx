@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import GuidePage from '@/components/guide-page';
 import { samsungPrivacy as guide } from '@/lib/guides';
-import { SITE_URL } from '@/lib/site';
+import { guideMetadata } from '@/lib/guide-meta';
 
 const path = '/guides/samsung-tv-privacy-settings';
 
