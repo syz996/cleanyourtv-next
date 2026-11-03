@@ -7,20 +7,14 @@ const DESC =
   'Paste one prompt into Claude Code, Codex or Gemini Antigravity to strip ads from Android TV / Google TV. No root, fully reversible.'
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: { default: TITLE, template: `%s | ${SITE_NAME}` },
-  description: DESC,
-  openGraph: {
-    type: 'website',
-    url: SITE_URL,
-    siteName: SITE_NAME,
+  alternates: { canonical: '/' },
+  twitter: {
+    card: 'summary_large_image',
     title: TITLE,
     description: DESC,
-    images: [{ url: '/og/home.png', width: 1200, height: 630, alt: 'Clean Your TV prompt generator' }],
+    images: ['/og/home.png'],
   },
-  twitter: { card: 'summary_large_image', title: TITLE, description: DESC, images: ['/og/home.png'] },
-  icons: { icon: '/favicon.ico', apple: '/apple-touch-icon.png' },
-}
+};
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="en"><body>{children}</body></html>;
 }
