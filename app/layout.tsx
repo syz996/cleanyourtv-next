@@ -7,6 +7,7 @@ const DESC =
   'Paste one prompt into Claude Code, Codex or Gemini Antigravity to strip ads from Android TV / Google TV. No root, fully reversible.'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   alternates: { canonical: '/' },
   twitter: {
     card: 'summary_large_image',
