@@ -1,8 +1,7 @@
-
 import type { Metadata } from 'next';
 import GuidePage from '@/components/guide-page';
 import { fireTvAds as guide } from '@/lib/guides';
-import { SITE_URL } from '@/lib/site';
+import { guideMetadata } from '@/lib/guide-meta';
 
 const path = '/guides/fire-tv-ads';
 
