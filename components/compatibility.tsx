@@ -1,10 +1,10 @@
 import { ArrowUpRight, CheckCircle2, CircleHelp, ShieldAlert, Tv } from 'lucide-react';
 
 const items = [
-  { name: 'Android TV / Google TV', desc: 'Android 8.0 or newer', status: 'Full guidance', tone: 'good', icon: CheckCircle2 },
-  { name: 'Amazon Fire TV', desc: 'Cleanup guidance only · no launcher swap', status: 'Limited', tone: 'warn', icon: CircleHelp },
-  { name: 'Samsung Tizen', desc: 'Not covered by the Android TV workflow', status: 'Unsupported', tone: 'bad', icon: ShieldAlert },
-  { name: 'LG webOS', desc: 'Not covered by the Android TV workflow', status: 'Unsupported', tone: 'bad', icon: ShieldAlert },
+  { name: 'Android TV / Google TV', desc: 'Android 8.0 or newer', status: 'Full guidance', tone: 'good', icon: CheckCircle2, href: '/guides/adb-pair-troubleshooting' },
+  { name: 'Amazon Fire TV', desc: 'Cleanup guidance only · no launcher swap', status: 'Limited', tone: 'warn', icon: CircleHelp, href: '/guides/fire-tv-ads' },
+  { name: 'Samsung Tizen', desc: 'Not covered by the Android TV workflow', status: 'Unsupported', tone: 'bad', icon: ShieldAlert, href: '/guides/samsung-tv-privacy-settings' },
+  { name: 'LG webOS', desc: 'Not covered by the Android TV workflow', status: 'Unsupported', tone: 'bad', icon: ShieldAlert, href: '/guides/remove-ads-from-lg-tv' },
   { name: 'Roku OS', desc: 'Not covered by the Android TV workflow', status: 'Unsupported', tone: 'bad', icon: ShieldAlert },
 ];
 
@@ -13,6 +13,7 @@ const alternatives = [
   {
     platform: 'Samsung Tizen',
     setting: 'Privacy Choices',
+    guide: '/guides/samsung-tv-privacy-settings', 
     fallbackNote: 'Menu naming varies by year and region — check Settings › Support › About on your set.',
     points: [
       'Turn off Interest-Based Advertising in Settings › Privacy Choices. It does not remove ACR tracking, which has no user-facing opt-out on Tizen.',
@@ -24,6 +25,7 @@ const alternatives = [
     platform: 'LG webOS',
     setting: 'Settings › General › Additional Settings',
     fallbackNote: 'On webOS 6 and newer the path sits under Settings › General › Additional Settings.',
+    guide: '/guides/remove-ads-from-lg-tv',
     points: [
       'Disable Live Plus to stop automatic content recognition. This is the closest equivalent to the Android TV privacy work.',
       'Turn off AI Recommendations where your model exposes it.',
@@ -81,7 +83,11 @@ export default function Compatibility() {
                   <item.icon size={18} />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <div className="text-sm font-semibold">{item.name}</div>
+                  {item.href ? (
+                    <a href={item.href} className="text-sm font-semibold hover:text-lime">{item.name}</a>
+                  ) : (
+                    <div className="text-sm font-semibold">{item.name}</div>
+                  )}
                   <div className="mt-1 text-xs text-slate-500">{item.desc}</div>
                 </div>
                 <span
@@ -133,6 +139,11 @@ export default function Compatibility() {
                 <p className="mt-4 border-t border-white/[.06] pt-3 text-[10px] leading-4 text-slate-600">
                   {alt.fallbackNote}
                 </p>
+                {alt.guide && (
+                  <a href={alt.guide} className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-lime hover:text-white">
+                    Full guide: {alt.platform} <ArrowUpRight size={12} />
+                  </a>
+                )}
               </div>
             ))}
           </div>
