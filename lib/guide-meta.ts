@@ -3,8 +3,7 @@ import type { Guide } from '@/lib/guides';
 import { SITE_URL } from '@/lib/site';
 
 export function guideMetadata(guide: Guide, path: string): Metadata {
-  // 图还没做得出来时，先把它换成 '/og/home.png'，标题和描述就已经分开了
-  const image = `/og/guides/${guide.slug}.png`;
+ const image = '/og/home.png';
 
   return {
     title: guide.title, // 不加后缀，layout 的 template 会自动拼
